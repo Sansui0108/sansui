@@ -9,7 +9,7 @@
     >
       <el-table-column prop="id" label="分类编号" width="140">
       </el-table-column>
-      <el-table-column prop="catename" label="分类名称" width="140">
+      <el-table-column prop="title" label="分类名称" width="140">
       </el-table-column>
       <el-table-column label="图片" width="380">
         <template slot-scope="scope">
@@ -40,7 +40,7 @@
 import { mapGetters, mapActions } from "vuex";
 
 // 引入弹框
-import { successAlert, errorAlert } from "../../../utils/alert";
+import { successAlert } from "../../../utils/alert";
 
 import { reqBannerDel } from "../../../utils/http";
 
@@ -51,12 +51,12 @@ export default {
   },
   computed: {
     ...mapGetters({
-      list: "cate/list",
+      list: "banner/list",
     }),
   },
   methods: {
     ...mapActions({
-      reqList: "cate/reqList",
+      reqList: "banner/reqList",
     }),
     edit(id) {
       this.$emit("edit", id);

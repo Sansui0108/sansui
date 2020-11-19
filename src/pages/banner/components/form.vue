@@ -44,14 +44,13 @@
 import { mapGetters, mapActions } from "vuex";
 
 import {
-  reqRoleList,
-  reqCateAdd,
-  reqCateDetail,
-  reqCateUpdate,
+  reqBannerAdd,
+  reqBannerDetail,
+  reqBannerUpdate,
 } from "../../../utils/http";
 
 // 引入弹框
-import { successAlert, errorAlert } from "../../../utils/alert";
+import { successAlert } from "../../../utils/alert";
 
 import path from "path";
 
@@ -73,12 +72,12 @@ export default {
 
   computed: {
     ...mapGetters({
-      cateList: "cate/list",
+      bannerList: "banner/list",
     }),
   },
   methods: {
     ...mapActions({
-      reqList: "cate/reqList",
+      reqList: "banner/reqList",
     }),
 
     //element-ui的上传文件
@@ -106,7 +105,7 @@ export default {
     },
 
     add() {
-      reqCateAdd(this.user).then((res) => {
+      reqBannerAdd(this.user).then((res) => {
         if (res.data.code == 200) {
           successAlert("添加成功");
           this.cancel();
@@ -118,7 +117,7 @@ export default {
     },
 
     getOne(id) {
-      reqCateDetail(id).then((res) => {
+      reqBannerDetail(id).then((res) => {
         this.user = res.data.list;
         this.imgUrl = this.$imgPre + this.user.img;
         this.user.id = id;
@@ -126,7 +125,7 @@ export default {
     },
 
     updata() {
-      reqCateUpdate(this.user).then((res) => {
+      reqBannerUpdate(this.user).then((res) => {
         if (res.data.code == 200) {
           successAlert("修改成功");
           this.cancel();
@@ -144,11 +143,7 @@ export default {
   },
 
   mounted() {
-    reqRoleList().then((res) => {
-      if (res.data.code == 200) {
-        this.roleList = res.data.list;
-      }
-    });
+    
   },
 };
 </script>

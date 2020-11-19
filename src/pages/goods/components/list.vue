@@ -24,14 +24,14 @@
 
       <el-table-column prop="isnew" label="是否新品" width="100">
         <template slot-scope="scope">
-          <el-tag type="primary" v-if="scope.row.status == 1">是</el-tag>
+          <el-tag type="primary" v-if="scope.row.isnew == 1">是</el-tag>
           <el-tag type="danger" v-else>否</el-tag>
         </template>
       </el-table-column>
 
       <el-table-column prop="ishot" label="是否热卖" width="100">
         <template slot-scope="scope">
-          <el-tag type="primary" v-if="scope.row.status == 1">是</el-tag>
+          <el-tag type="primary" v-if="scope.row.ishot == 1">是</el-tag>
           <el-tag type="danger" v-else>否</el-tag>
         </template>
       </el-table-column>

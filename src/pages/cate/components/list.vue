@@ -79,9 +79,6 @@ export default {
 };
 </script>
 <style scoped>
-/* .el-table__row >>> .cell{
-  text-align: center;
-} */
 .el-table__row img {
   width: 200px;
   height: 200px;

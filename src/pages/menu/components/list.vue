@@ -64,8 +64,6 @@ export default {
               successAlert(res.data.msg);
               // 29.通知父组件刷新list数据
               this.$emit("init");
-            } else {
-              errorAlert(res.data.msg);
             }
           });
         })

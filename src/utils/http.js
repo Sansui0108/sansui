@@ -427,7 +427,7 @@ export const reqGoodsUpdate = (user) => {
 }
 // ===========商品列表接口 结束====================
 
-// ===========分类接口 开始====================
+// ===========轮播图接口 开始====================
 // 添加按钮
 export const reqBannerAdd = (user) => {
   let d = new FormData()
@@ -483,4 +483,55 @@ export const reqBannerUpdate = (user) => {
     data: d
   })
 }
-// ===========分类接口 结束====================
+// ===========轮播图接口 结束====================
+
+// ===========秒杀接口 开始====================
+// 添加按钮
+export const reqSeckillAdd = (user) => {
+
+  return axios({
+    url: baseUrl + "/api/seckadd",
+    method: "post",
+    data: qs.stringify(user)
+  })
+}
+
+// // 管理员列表
+export const reqScekillList = (p) => {
+  return axios({
+    url: baseUrl + "/api/secklist",
+    method: "GET",
+  })
+}
+
+// // 删除数据
+export const reqSeckillDel = (id) => {
+  return axios({
+    url: baseUrl + "/api/seckdelete",
+    method: "POST",
+    data: qs.stringify({
+      id: id
+    })
+  })
+}
+
+// // 获取一条数据详情
+export const reqSeckillDetail = (id) => {
+  return axios({
+    url: baseUrl + "/api/seckinfo",
+    method: "get",
+    params: {
+      id: id
+    }
+  })
+}
+
+// // 修改
+export const reqSeckillUpdate = (user) => {
+  return axios({
+    url: baseUrl + "/api/seckedit",
+    method: "post",
+    data: qs.stringify(user)
+  })
+}
+// ===========轮播图接口 结束====================

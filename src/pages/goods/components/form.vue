@@ -56,7 +56,7 @@
             <i v-else class="el-icon-plus avatar-uploader-icon"></i>
           </el-upload>
         </el-form-item>
-        {{ user }}
+      
         <el-form-item label="商品规格" label-width="120px" prop="specsid">
           <el-select
             v-model="user.specsid"
@@ -321,7 +321,7 @@ export default {
     },
 
     closed() {
-      if (this.info.title == "编辑分类") {
+      if (this.info.title == "编辑商品") {
         this.empty();
       }
     },

@@ -36,11 +36,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import {
-  reqVipList,
-  reqVipDetail,
-  reqVipUpdate,
-} from "../../../utils/http";
+import { reqVipList, reqVipDetail, reqVipUpdate } from "../../../utils/http";
 // 引入弹框
 import { successAlert, errorAlert } from "../../../utils/alert";
 export default {
@@ -53,6 +49,7 @@ export default {
         password: "",
         status: 1,
       },
+      pass: "",
     };
   },
   computed: {
@@ -100,8 +97,7 @@ export default {
       }
     },
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
 <style scoped>

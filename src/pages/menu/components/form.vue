@@ -136,7 +136,6 @@ export default {
           this.empty();
           // 24.通知menu刷新列表数据
           this.$emit("init");
-        } else {
         }
       });
     },
@@ -170,8 +169,6 @@ export default {
           this.cancel();
           this.empty();
           this.$emit("init");
-        } else {
-          errorAlert(res.data.msg);
         }
       });
     },

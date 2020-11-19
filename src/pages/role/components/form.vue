@@ -47,7 +47,7 @@ import {
   reqRoleUpdate,
 } from "../../../utils/http";
 // 引入弹框
-import { successAlert, errorAlert } from "../../../utils/alert";
+import { successAlert,  } from "../../../utils/alert";
 export default {
   props: ["info"],
   data() {
