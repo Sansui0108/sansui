@@ -1,19 +1,19 @@
 <template>
-  <div class="add" :rules="rules">
+  <div class="add" >
     <el-dialog
       :title="info.title"
       :visible.sync="info.isshow"
       @opened="opened"
       @closed="closed"
     >
-      <el-form :model="user">
+      <el-form :model="user" :rules="rules">
         <el-form-item label="一级分类" label-width="120px" prop="first_cateid">
           <el-select
             v-model="user.first_cateid"
             placeholder="请选择一级分类"
             @change="changeFirst"
           >
-            <el-option label="顶级分类" :value="0"></el-option>
+            
             <el-option
               v-for="item in cateList"
               :key="item.id"
@@ -25,7 +25,7 @@
 
         <el-form-item label="二级分类" label-width="120px" prop="second_cateid">
           <el-select v-model="user.second_cateid" placeholder="请选择二级分类">
-            <el-option label="顶级分类" :value="0"></el-option>
+            
             <el-option
               v-for="item in secondCateList"
               :key="item.id"

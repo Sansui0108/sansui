@@ -50,6 +50,7 @@ export default {
         status: 1,
       },
       pass: "",
+      oldPass: "",
     };
   },
   computed: {
@@ -73,7 +74,12 @@ export default {
 
     // 修改
     updata() {
+      if (this.user.password === "") {
+        errorAlert("密码不能为空");
+        return;
+      }
       reqVipUpdate(this.user).then((res) => {
+        console.log(this.user);
         if (res.data.code == 200) {
           successAlert("修改成功");
           this.cancel();
@@ -85,6 +91,8 @@ export default {
     // 获取详情
     getOne(uid) {
       reqVipDetail(uid).then((res) => {
+        this.oldPass = res.data.list.password;
+        console.log(this.oldPass);
         this.user = res.data.list;
         this.user.password = "";
       });
