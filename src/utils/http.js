@@ -8,12 +8,12 @@ import router from "../router/index"
 import Vue from "vue"
 
 // 开发环境
-const baseUrl = "/aa"
+// const baseUrl = "/aa"
 // 展示图片，需要给图片加“http://localhost:3000”,打包又不用，所以在http.js 中给Vue的原型挂了http://localhost:3000
-Vue.prototype.$imgPre = "http://localhost:3000"
+// Vue.prototype.$imgPre = "http://localhost:3000"
 // 生产环境
-// const baseUrl = ""
-// Vue.prototype.$imgPre = ""
+const baseUrl = ""
+Vue.prototype.$imgPre = ""
 
 
 
